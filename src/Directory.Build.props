@@ -1,0 +1,15 @@
+<Project>
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <AvaloniaVersion>11.0.10</AvaloniaVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Copyright>Copyright (c) 2023 Danie Meza </Copyright>
+        <PackageProjectUrl>https://github.com/danielmeza/Avalonia.CrossAppBuilder</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/danielmeza/Avalonia.CrossAppBuilder</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>Avalonia,Cross,DependenyInjection,Shell</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseUrl>https://github.com/danielmeza/Avalonia.CrossAppBuilder/blob/main/LICENSE</PackageLicenseUrl>
+    </PropertyGroup>
+</Project>

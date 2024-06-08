@@ -4,6 +4,9 @@
         <TargetFrameworks>net8.0;net8.0-ios;net8.0-android</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Avalonia.CrossAppBuilder</Title>
+        <Description>When creating Avalonia solutions is commonly to use several projects initializations configuration using AppBuilder, most of these configuration apply to all projects and ends duplicated in each target entry point, Avalonia.CrossAppBuilder solve that by providing a central way to configure avalonia cross settings.</Description>
     </PropertyGroup>
     <PropertyGroup Condition="$(TargetFramework.StartsWith('net8.0-ios')) == true">
         <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
