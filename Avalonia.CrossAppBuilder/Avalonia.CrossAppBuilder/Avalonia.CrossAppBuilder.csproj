@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net8.0-ios;net8.0-android</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('net8.0-ios')) == true">
+        <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('net8.0-android')) == true">
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
+    </ItemGroup>
+
+    <!-- iOS Packages-->
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-ios')) == true">
+        <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaVersion)"/>
+    </ItemGroup>
+
+    <!-- Android Packages-->
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-android')) == true">
+        <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)"/>
+    </ItemGroup>
+    <!-- Android -->
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-android')) != true">
+        <Compile Remove="**\*.Android.cs"/>
+        <None Include="**\*.Android.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"/>
+    </ItemGroup>
+
+    <!-- iOS -->
+    <ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-ios')) != true">
+        <Compile Remove="**\*.iOS.cs"/>
+        <None Include="**\*.iOS.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"/>
+    </ItemGroup>
+
+</Project>
