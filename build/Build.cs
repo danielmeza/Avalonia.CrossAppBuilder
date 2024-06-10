@@ -14,7 +14,7 @@ using Serilog;
 
 [GitHubActions(
     "build",
-    GitHubActionsImage.UbuntuLatest,
+    GitHubActionsImage.WindowsLatest,
     AutoGenerate = true,
     EnableGitHubToken = true,
     On = new[] { GitHubActionsTrigger.Push },
