@@ -76,9 +76,7 @@ class Build : NukeBuild
         .Executes(() =>
         {
             OutputDirectory.CreateOrCleanDirectory();
-            DotNetTasks.DotNetClean(_ => _
-                .SetConfiguration(Configuration)
-                .SetProcessWorkingDirectory(SourceDirectory));
+          
         });
 
     Target Restore => _ => _
