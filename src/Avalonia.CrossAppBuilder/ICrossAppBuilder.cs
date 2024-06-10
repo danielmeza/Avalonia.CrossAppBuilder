@@ -10,7 +10,7 @@ public interface ICrossAppBuilder
     /// Configures shared common settings. 
     /// </summary>
     /// <remarks>
-    /// This method is invoked rigth away, you can use the <see cref="builder"/> to execute code in diffents
+    /// This method is invoked right away, you can use the <paramref name="builder"/> to execute code in
     /// initialization stages. 
     /// </remarks>
     /// <param name="builder"></param>
