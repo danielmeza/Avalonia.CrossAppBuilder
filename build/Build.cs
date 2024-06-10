@@ -83,8 +83,14 @@ class Build : NukeBuild
         .DependsOn(Clean)
         .Executes(() =>
         {
+            DotNetTasks.DotNetWorkloadInstall(_ => _
+                .SetWorkloadId("maui")
+                .SetProcessWorkingDirectory(SourceDirectory)
+            );
             DotNetTasks.DotNetWorkloadRestore(_ => _
-                .SetProcessWorkingDirectory(SourceDirectory));
+                .SetProcessWorkingDirectory(SourceDirectory)
+            );
+            
             DotNetTasks.DotNetRestore(_ => _
                 .SetProcessWorkingDirectory(SourceDirectory)
             );
