@@ -85,6 +85,8 @@ class Build : NukeBuild
         .DependsOn(Clean)
         .Executes(() =>
         {
+            DotNetTasks.DotNetWorkloadRestore(_ => _
+                .SetProcessWorkingDirectory(SourceDirectory));
             DotNetTasks.DotNetRestore(_ => _
                 .SetProcessWorkingDirectory(SourceDirectory)
             );
