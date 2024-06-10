@@ -14,7 +14,7 @@ using Serilog;
 
 [GitHubActions(
     "build",
-    GitHubActionsImage.WindowsLatest,
+    GitHubActionsImage.MacOsLatest,
     AutoGenerate = true,
     EnableGitHubToken = true,
     On = new[] { GitHubActionsTrigger.Push },
@@ -38,8 +38,6 @@ class Build : NukeBuild
     [Parameter] [Secret] readonly string NuGetKey;
 
     [GitRepository] readonly GitRepository Repository;
-
-    [GitVersion] readonly GitVersion GitVersion;
 
     GitHubActions GitHubActions => GitHubActions.Instance;
 
